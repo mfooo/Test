@@ -11678,7 +11678,6 @@ void Unit::MonsterMoveWithSpeed(float x, float y, float z, uint32 transitTime)
     }
 }
 
-<<<<<<< HEAD
 void Unit::MonsterJump(float x, float y, float z, float o, uint32 transitTime, uint32 verticalSpeed)
 {
     SendMonsterMove(x, y, z, SPLINETYPE_NORMAL, SplineFlags(SPLINEFLAG_TRAJECTORY | SPLINEFLAG_WALKMODE), transitTime, NULL, double(verticalSpeed));
@@ -11701,8 +11700,6 @@ void Unit::MonsterJump(float x, float y, float z, float o, uint32 transitTime, u
     }
 }
 
-=======
->>>>>>> 89e1cb19065f25527599fa3d866ccf49804c90e0
 void Unit::MonsterMoveByPath(float x, float y, float z, uint32 speed, bool smoothPath)
 {
     PathInfo path(this, x, y, z, !smoothPath);
@@ -11712,10 +11709,7 @@ void Unit::MonsterMoveByPath(float x, float y, float z, uint32 speed, bool smoot
     pointPath[size-1].x = x;
     pointPath[size-1].y = y;
     pointPath[size-1].z = z;
-<<<<<<< HEAD
-=======
 
->>>>>>> 89e1cb19065f25527599fa3d866ccf49804c90e0
     uint32 traveltime = uint32(pointPath.GetTotalLength()/float(speed));
     MonsterMoveByPath(pointPath, 1, pointPath.size(), traveltime);
 }
@@ -12135,7 +12129,7 @@ SpellAuraHolder* Unit::GetSpellAuraHolder (uint32 spellid, uint64 casterGUID)
     return NULL;
 }
 
-<<<<<<< HEAD
+
 void Unit::RemoveUnitFromHostileRefManager(Unit* p_unit)
 {
    getHostileRefManager().deleteReference(p_unit);
@@ -12258,8 +12252,6 @@ void Unit::_AddAura(uint32 spellID, uint32 duration)
     }
 }
 
-=======
->>>>>>> 89e1cb19065f25527599fa3d866ccf49804c90e0
 template<typename Elem, typename Node>
 void Unit::SendMonsterMoveByPath(Path<Elem,Node> const& path, uint32 start, uint32 end, SplineFlags flags, uint32 traveltime)
 {
