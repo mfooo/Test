@@ -410,7 +410,6 @@ enum UnitState
     UNIT_STAT_FLEEING         = 0x00020000,                     // FleeMovementGenerator/TimedFleeingMovementGenerator active/onstack
     UNIT_STAT_FLEEING_MOVE    = 0x00040000,
     UNIT_STAT_ON_VEHICLE      = 0x00080000,                     // Unit is on vehicle
-
     UNIT_STAT_IGNORE_PATHFINDING    = 0x00080000,               // do not use pathfinding in any MovementGenerator
 
     // masks (only for check)
@@ -1497,7 +1496,6 @@ class MANGOS_DLL_SPEC Unit : public WorldObject
         template<typename PathElem, typename PathNode>
         void MonsterMoveByPath(Path<PathElem,PathNode> const& path, uint32 start, uint32 end, uint32 transitTime = 0);
 
-
         // recommend use MonsterMove/MonsterMoveWithSpeed for most case that correctly work with movegens
         // if used additional args in ... part then floats must explicitly casted to double
         void SendMonsterMove(float x, float y, float z, SplineType type, SplineFlags flags, uint32 Time, Player* player = NULL, ...);
@@ -2248,6 +2246,7 @@ bool Unit::CheckAllControlledUnits(Func const& func, uint32 controlledMask) cons
 
     return false;
 }
+
 /* -- removed from mangos for mmaps -- 
 template<typename Elem, typename Node>
 inline void Unit::SendMonsterMoveByPath(Path<Elem,Node> const& path, uint32 start, uint32 end, SplineFlags flags)
@@ -2279,3 +2278,4 @@ inline void Unit::SendMonsterMoveByPath(Path<Elem,Node> const& path, uint32 star
 }
 */
 #endif
+
